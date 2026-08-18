@@ -1,0 +1,51 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\fswiss\fprq2\fcharset0 Calibri Light;}{\f3\fmodern\fprq1\fcharset0 Consolas;}}
+{\colortbl;\red0\green0\blue0;\red31\green73\blue125;\red89\green89\blue89;\red13\green17\blue23;\red230\green107\blue34;}
+\deflang3082\widowctrl\hyphauto
+
+\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440
+
+{\pard\qc\sb480\sa120\f2\fs36\b\cf2 Prompt para Lovable\par}
+{\pard\qc\sa120\f1\fs22\cf3 Generaci\'f3n del frontend del Sistema de Alerta Temprana de Dengue\par}
+{\pard\qc\sa480\f1\fs20\cf3 Microproyecto BIOMAC \'b7 Grupo 11 \'b7 Universidad de los Andes\par}
+
+{\pard\sb240\sa120\f2\fs26\b\cf2 Qu\'e9 es Lovable\par}
+{\pard\sa240\f1\fs22 Lovable (lovable.dev) es una herramienta de generaci\'f3n de frontends basada en IA. Se le proporciona un prompt en lenguaje natural describiendo la aplicaci\'f3n deseada y genera c\'f3digo React + Tailwind listo para desplegar. El equipo puede usar el mockup del tablero SAT-Dengue como referencia visual al redactar el prompt.\par}
+
+{\pard\sa240\f1\fs22\b C\'f3mo usarlo:\b0  Ingresar a lovable.dev, crear un nuevo proyecto, pegar el prompt completo de la siguiente secci\'f3n en el campo de texto inicial y ejecutar. El sistema generar\'e1 el c\'f3digo base que puede refinarse con instrucciones de seguimiento.\par}
+
+{\pard\sb360\sa120\f2\fs26\b\cf2 Prompt (pegar completo en Lovable)\par}
+
+{\pard\sa0\f1\fs18\cf3 舒? Inicio del prompt 舒?\par}
+{\pard\sb120\sa0\f3\fs20\cf4 Crea una aplicaci\'f3n React con Tailwind CSS y Recharts que funcione como tablero operativo del Sistema de Alerta Temprana de Dengue (SAT-Dengue) para Colombia. La URL base de la API debe leerse desde la variable de entorno VITE_API_URL (por defecto http://localhost:8000). El tablero consume tres endpoints: GET /api/v1/forecast/summary devuelve \{ epidemic_count, alert_count, total_analyzed, last_updated \}; GET /api/v1/forecast/municipalities devuelve un arreglo de \{ municipio, departamento, risk_level, observed, predicted, peak_week, trend \} donde risk_level es uno de EPIDEMIA | ALERTA | ENDEMIA | EXITO; y GET /api/v1/forecast/endemic-channel?municipio=X devuelve \{ weeks, p25, median, p75, observed, forecast \} con arreglos paralelos para graficar el corredor end\'e9mico del municipio seleccionado. Mientras cargan los datos muestra skeletons; si la API falla, muestra un banner de error en rojo con el mensaje recibido.\par}
+{\pard\sb160\sa0\f3\fs20\cf4 La paleta de colores es: fondo general #EDF1F7, superficie de tarjetas #FFFFFF, navbar #0E1E3C, texto principal #1B2233, texto secundario #5C6B84. Los cuatro niveles de riesgo tienen sus propios colores sem\'e1nticos: EPIDEMIA -> rojo #BE1D2B (fondo #FDEAE8), ALERTA -> \'e1mbar #C27800 (fondo #FFF3D6), ENDEMIA -> verde #1A7F37 (fondo #E4F4EA), EXITO -> azul #1654A2 (fondo #D6E6F8). Usa una fuente monoespaciada (font-mono de Tailwind) para etiquetas, KPIs y badges. El navbar tiene altura 50 px con borde superior rojo de 3 px, muestra el texto SAT-DENGUE en blanco a la izquierda, seguido del subt\'edtulo "Colombia - SIVIGILA 2007-2026 - Horizonte: 4-8 semanas" en gris, y a la derecha badges coloreados con el conteo de municipios por nivel de riesgo m\'e1s el texto "Universidad de los Andes". Debajo del navbar muestra un banner azul claro (#D6E6F8) con la etiqueta PREGUNTA DE NEGOCIO en monoespaciado y el texto en cursiva: "\'bfQu\'e9 municipios presentan riesgo de experimentar un exceso de casos de dengue en las pr\'f3ximas 4 a 8 semanas, de manera que sea posible anticipar la ocurrencia de un brote y apoyar la toma oportuna de medidas preventivas?"\par}
+{\pard\sb160\sa0\f3\fs20\cf4 El cuerpo tiene tres zonas apiladas. Primero una franja de cuatro tarjetas KPI: "Municipios en epidemia" (n\'famero grande en rojo), "Municipios en alerta" (\'e1mbar), "Total analizados" (azul), "\'daltima actualizaci\'f3n" (fecha/hora). Luego la zona principal en dos columnas (40/60): la columna izquierda muestra un SVG simplificado de Colombia donde cada municipio analizado aparece como un c\'edrculo posicionado aproximadamente por coordenadas y coloreado seg\'fan su nivel de riesgo, con tooltip al pasar el cursor; debajo del mapa lista los 10 municipios de mayor riesgo como chips coloreados con nombre, departamento y nivel. La columna derecha muestra el corredor end\'e9mico del municipio seleccionado usando AreaChart de Recharts: tres \'e1reas apiladas semitransparentes para las bandas P25-mediana-P75, una l\'ednea s\'f3lida verde para casos observados, y una l\'ednea discontinua roja para el pron\'f3stico de las pr\'f3ximas 4-8 semanas; incluye leyenda y tooltip con todos los valores. Al hacer clic en un municipio del mapa o de la lista, la gr\'e1fica se actualiza llamando al endpoint del corredor end\'e9mico. Por \'faltimo, una secci\'f3n de tabla paginada (20 filas) con columnas Municipio, Departamento, Nivel de riesgo (chip coloreado), Casos observados, Casos previstos, Semana pico estimada y Tendencia (flecha arriba/abajo/derecha); la tabla tiene b\'fasqueda por texto y filtro por nivel de riesgo. El footer muestra versi\'f3n del modelo, fecha de entrenamiento y fuente de datos (SIVIGILA/INS).\par}
+{\pard\sb160\sa200\f3\fs20\cf4 Organiza el c\'f3digo en componentes separados: Navbar, QuestionBanner, KpiStrip, ColombiaMap, TopMuniList, EndemicChannelChart, MuniTable y Footer. Usa useState/useEffect para el fetching de datos. La aplicaci\'f3n debe ser completamente responsiva y estar optimizada para pantallas de 1280 px o m\'e1s; en pantallas menores las dos columnas principales se apilan verticalmente.\par}
+{\pard\sa120\f1\fs18\cf3 舒? Fin del prompt 舒?\par}
+
+{\pard\sb360\sa120\f2\fs26\b\cf2 Endpoints de la API (stubs para desarrollo)\par}
+{\pard\sa120\f1\fs22 Durante el desarrollo, antes de conectar el modelo real, el equipo puede crear un FastAPI stub con datos de ejemplo. Los tres endpoints y sus estructuras de respuesta esperadas son:\par}
+
+{\pard\sb120\sa0\f1\fs22\b GET /api/v1/forecast/summary\par}
+{\pard\sa100\f3\fs18 \{ "epidemic_count": 12, "alert_count": 34, "total_analyzed": 148, "last_updated": "2026-08-17T08:00:00" \}\par}
+
+{\pard\sb120\sa0\f1\fs22\b GET /api/v1/forecast/municipalities\par}
+{\pard\sa100\f3\fs18 [ \{ "municipio": "Bucaramanga", "departamento": "Santander", "risk_level": "EPIDEMIA", "observed": 245, "predicted": 310, "peak_week": "Sem 4", "trend": "up" \}, ... ]\par}
+
+{\pard\sb120\sa0\f1\fs22\b GET /api/v1/forecast/endemic-channel?municipio=Bucaramanga\par}
+{\pard\sa240\f3\fs18 \{ "weeks": ["Sem 1","Sem 2",...], "p25": [12,15,...], "median": [22,25,...], "p75": [35,38,...], "observed": [28,31,...], "forecast": [null,null,...,42,48] \}\par}
+
+{\pard\sb360\sa120\f2\fs26\b\cf2 Paleta de colores de referencia\par}
+
+{\pard\sb60\sa0\f1\fs22\b Fondo general:\b0  #EDF1F7\par}
+{\pard\sa0\f1\fs22\b Tarjetas:\b0  #FFFFFF\par}
+{\pard\sa0\f1\fs22\b Navbar:\b0  #0E1E3C\par}
+{\pard\sa0\f1\fs22\b Texto principal:\b0  #1B2233\par}
+{\pard\sa0\f1\fs22\b Texto secundario:\b0  #5C6B84\par}
+{\pard\sb80\sa0\f1\fs22\b EPIDEMIA (rojo):\b0  texto #BE1D2B / fondo #FDEAE8\par}
+{\pard\sa0\f1\fs22\b ALERTA (\'e1mbar):\b0  texto #C27800 / fondo #FFF3D6\par}
+{\pard\sa0\f1\fs22\b ENDEMIA (verde):\b0  texto #1A7F37 / fondo #E4F4EA\par}
+{\pard\sa480\f1\fs22\b EXITO (azul):\b0  texto #1654A2 / fondo #D6E6F8\par}
+
+{\pard\qc\f1\fs18\cf3 Microproyecto BIOMAC \'b7 MAIA PDS \'b7 Universidad de los Andes \'b7 Agosto 2026\par}
+}
