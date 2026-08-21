@@ -1,0 +1,20 @@
+hicimos algunas  encuentras dentro del grupo:
+
+
+Usaremos Dengue o Dengue Grave?
+Dengue grave -> ganó está
+Dengue
+
+Trabajamos con los datos de Bucaramanga y Cali? si
+
+
+Con esto ya tenemos todo para armar el documento entregable 1
+Y las decisiones sobre los datos
+
+
+Qué modelo proponemos usar para el doc del entregable 1
+XGBoost
+
+
+Con esta info, actualizo el Doc del entregable 1 esta noche y les confirmo para su revisión y refinamiento.
+Les parece?
