@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SAT-Dengue Metodología" id="sat-dengue-v4">
+    <mxGraphModel dx="1106" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontFamily=Helvetica;fontColor=#1A2D38;" value="SAT-Dengue · Arquitectura del sistema BIOMAC" vertex="1">
+          <mxGeometry height="30" width="900" x="46" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#537080;fontFamily=Helvetica;" value="Pipeline de datos epidemiológicos y climáticos · 523 municipios endémicos · horizontes T+1 y T+2" vertex="1">
+          <mxGeometry height="20" width="900" x="46" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="swimlane;startSize=70;fillColor=#0B5870;swimlaneBodyColor=#FFFFFF;fontColor=#FFFFFF;strokeColor=#C2D4DE;rounded=1;arcSize=3;html=1;fontFamily=Helvetica;fontStyle=1;fontSize=13;" value="&lt;div style=&quot;font-size:8px;letter-spacing:1.5px;font-weight:600;opacity:0.7;margin-bottom:6px;&quot;&gt;DATOS&lt;/div&gt;&lt;div&gt;Fuentes de datos&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="180" x="46" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p1i1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• SIVIGILA · COD 210 · 220" vertex="1">
+          <mxGeometry height="23" width="164" x="54" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="p1i2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• ERA5-Land · CHIRPS · GEE" vertex="1">
+          <mxGeometry height="23" width="164" x="54" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="p1i3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• DANE / DIVIPOLA" vertex="1">
+          <mxGeometry height="23" width="164" x="54" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="p1i4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• 2007 – 2025" vertex="1">
+          <mxGeometry height="23" width="164" x="54" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="swimlane;startSize=70;fillColor=#0B5870;swimlaneBodyColor=#FFFFFF;fontColor=#FFFFFF;strokeColor=#C2D4DE;rounded=1;arcSize=3;html=1;fontFamily=Helvetica;fontStyle=1;fontSize=13;" value="&lt;div style=&quot;font-size:8px;letter-spacing:1.5px;font-weight:600;opacity:0.7;margin-bottom:6px;&quot;&gt;PREPARACIÓN&lt;/div&gt;&lt;div&gt;Panel municipio-mes&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="180" x="270" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p2i1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• 253 992 filas · 1 114 munis" vertex="1">
+          <mxGeometry height="23" width="164" x="278" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="p2i2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Canal endémico P75 (Bortman)" vertex="1">
+          <mxGeometry height="23" width="164" x="278" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="p2i3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Rezagos 1–6 m · media móvil" vertex="1">
+          <mxGeometry height="23" width="164" x="278" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="p2i4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• DVC versioning" vertex="1">
+          <mxGeometry height="23" width="164" x="278" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="swimlane;startSize=70;fillColor=#0B5870;swimlaneBodyColor=#FFFFFF;fontColor=#FFFFFF;strokeColor=#C2D4DE;rounded=1;arcSize=3;html=1;fontFamily=Helvetica;fontStyle=1;fontSize=13;" value="&lt;div style=&quot;font-size:8px;letter-spacing:1.5px;font-weight:600;opacity:0.7;margin-bottom:6px;&quot;&gt;MODELADO&lt;/div&gt;&lt;div&gt;Entrenamiento&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="180" x="494" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p3i1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• XGBoost · LightGBM · GAM" vertex="1">
+          <mxGeometry height="23" width="164" x="502" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="p3i2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Ventana expansiva 2007–22" vertex="1">
+          <mxGeometry height="23" width="164" x="502" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="p3i3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Calibración Platt scaling" vertex="1">
+          <mxGeometry height="23" width="164" x="502" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="p3i4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• MLflow tracking + registro" vertex="1">
+          <mxGeometry height="23" width="164" x="502" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="1" style="swimlane;startSize=70;fillColor=#0B5870;swimlaneBodyColor=#FFFFFF;fontColor=#FFFFFF;strokeColor=#C2D4DE;rounded=1;arcSize=3;html=1;fontFamily=Helvetica;fontStyle=1;fontSize=13;" value="&lt;div style=&quot;font-size:8px;letter-spacing:1.5px;font-weight:600;opacity:0.7;margin-bottom:6px;&quot;&gt;EVALUACIÓN&lt;/div&gt;&lt;div&gt;Evaluación&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="180" x="718" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p4i1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Sensibilidad en inicios" vertex="1">
+          <mxGeometry height="23" width="164" x="726" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="p4i2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Falsas alarmas &lt; 25 %" vertex="1">
+          <mxGeometry height="23" width="164" x="726" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="p4i3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Brier score + calibración" vertex="1">
+          <mxGeometry height="23" width="164" x="726" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="p4i4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• vs canal endémico (base)" vertex="1">
+          <mxGeometry height="23" width="164" x="726" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="1" style="swimlane;startSize=70;fillColor=#0B5870;swimlaneBodyColor=#FFFFFF;fontColor=#FFFFFF;strokeColor=#C2D4DE;rounded=1;arcSize=3;html=1;fontFamily=Helvetica;fontStyle=1;fontSize=13;" value="&lt;div style=&quot;font-size:8px;letter-spacing:1.5px;font-weight:600;opacity:0.7;margin-bottom:6px;&quot;&gt;DESPLIEGUE&lt;/div&gt;&lt;div&gt;Sistema activo&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="180" x="942" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p5i1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• FastAPI · Docker · Railway" vertex="1">
+          <mxGeometry height="23" width="164" x="950" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="p5i2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Dashboard React + Vite" vertex="1">
+          <mxGeometry height="23" width="164" x="950" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="p5i3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Alertas T+1 y T+2" vertex="1">
+          <mxGeometry height="23" width="164" x="950" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="p5i4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1A2D38;fontFamily=Helvetica;" value="• Validación prospectiva 2026" vertex="1">
+          <mxGeometry height="23" width="164" x="950" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="p1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#8BB0C4;strokeWidth=1.5;fontSize=9;fontColor=#537080;fontFamily=Helvetica;verticalAlign=bottom;" target="p2" value="datos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="p2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#8BB0C4;strokeWidth=1.5;fontSize=9;fontColor=#537080;fontFamily=Helvetica;verticalAlign=bottom;" target="p3" value="39 vars">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="p3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#8BB0C4;strokeWidth=1.5;fontSize=9;fontColor=#537080;fontFamily=Helvetica;verticalAlign=bottom;" target="p4" value="prob.">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="p4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#8BB0C4;strokeWidth=1.5;fontSize=9;fontColor=#537080;fontFamily=Helvetica;verticalAlign=bottom;" target="p5" value="champion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" edge="1" parent="1" source="p5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#9A5010;strokeWidth=1.5;dashed=1;dashPattern=6 3;fontSize=9;fontColor=#9A5010;fontFamily=Helvetica;fontStyle=1;verticalAlign=top;" target="p3" value="Reentrenamiento automático mensual">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1032" y="370" />
+              <mxPoint x="584" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#8BB0C4;fontFamily=Helvetica;" value="────  Flujo de datos principal" vertex="1">
+          <mxGeometry height="20" width="220" x="46" y="394" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#9A5010;fontFamily=Helvetica;" value="- - -  Reentrenamiento automático (mensual)" vertex="1">
+          <mxGeometry height="20" width="340" x="280" y="394" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
